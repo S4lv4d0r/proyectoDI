@@ -27,7 +27,22 @@ namespace Ecuaciones
         }
         private void cierre()
         {
-            this.primer.Enabled = true;
+            if (!this.segundo.Enabled)
+            {
+                this.segundo.Enabled = true;
+            }
+            if (!this.primer.Enabled)
+            {
+                this.primer.Enabled = true;
+            }
+        }
+
+        private void segundo_Click(object sender, EventArgs e)
+        {
+            FormSegun lfSeun = new FormSegun(this);
+            lfSeun.Show();
+            this.segundo.Enabled = false;
+            lfSeun.EventoCierre += new FormSegun.DelegadoCierre(cierre);
         }
     }
 }

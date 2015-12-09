@@ -50,6 +50,7 @@
             this.segundo.TabIndex = 1;
             this.segundo.Text = "ax^2+bx+c=d";
             this.segundo.UseVisualStyleBackColor = true;
+            this.segundo.Click += new System.EventHandler(this.segundo_Click);
             // 
             // Form1
             // 
