@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ecuaciones
 {
-    class ResolverEcuacionesPrimer
+    public class ResolverEcuacionesPrimer
     {
         public static void resolve(int a, int b, int c, out double x)
         {
@@ -20,7 +20,7 @@ namespace Ecuaciones
             }            
         }
     }
-    class ResolverEcuacionesSegundo
+    public class ResolverEcuacionesSegundo
     {
         public static void resolve(int a, int b, int c, int d, out double x1, out double x2)
         {
