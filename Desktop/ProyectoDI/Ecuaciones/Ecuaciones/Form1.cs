@@ -15,12 +15,19 @@ namespace Ecuaciones
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         private void primer_Click(object sender, EventArgs e)
         {
-            FormPriemr lfPrimer = new FormPriemr();
+            FormPriemr lfPrimer = new FormPriemr(this);
             lfPrimer.Show();
+            this.primer.Enabled = false;
+            lfPrimer.EventoCierre += new FormPriemr.DelegadoCierre(cierre);
+        }
+        private void cierre()
+        {
+            this.primer.Enabled = true;
         }
     }
 }

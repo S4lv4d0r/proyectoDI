@@ -12,12 +12,15 @@ namespace Ecuaciones
 {
     public partial class FormPriemr : Form
     {
+        public delegate void DelegadoCierre();
+        public event DelegadoCierre EventoCierre;
         private int a{get;set;}
         private int b{get;set;}
         private int c{get;set;}
-        public FormPriemr()
+        public FormPriemr(Form1 padre)
         {
-            InitializeComponent();            
+            InitializeComponent();
+            this.Owner = padre;
         }
         private void updateFormula()
         {
@@ -76,6 +79,16 @@ namespace Ecuaciones
             this.textoNumerico2.Text = "";
             this.textoNumerico3.Text = "";
             this.textoNumerico1.Focus();
+        }
+
+        private void FormPriemr_Load(object sender, EventArgs e)
+        {
+            this.Location = new Point(this.Owner.Location.X+this.Owner.Width,this.Owner.Location.Y);
+        }
+
+        private void FormPriemr_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.EventoCierre();
         }
     }
 }
