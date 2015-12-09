@@ -16,5 +16,11 @@ namespace Ecuaciones
         {
             InitializeComponent();
         }
+
+        private void primer_Click(object sender, EventArgs e)
+        {
+            FormPriemr lfPrimer = new FormPriemr();
+            lfPrimer.Show();
+        }
     }
 }

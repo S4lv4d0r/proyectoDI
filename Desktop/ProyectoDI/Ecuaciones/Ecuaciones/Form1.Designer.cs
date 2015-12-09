@@ -40,6 +40,7 @@
             this.primer.TabIndex = 0;
             this.primer.Text = "ax+b=c";
             this.primer.UseVisualStyleBackColor = true;
+            this.primer.Click += new System.EventHandler(this.primer_Click);
             // 
             // segundo
             // 
