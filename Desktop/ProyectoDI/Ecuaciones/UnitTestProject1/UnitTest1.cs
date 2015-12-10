@@ -67,10 +67,46 @@ namespace UnitTestProject1
             int b = 0;
             int c = 0;
             int d=0;
-            double x1,x2
+            double x1, x2;
             ResolverEcuacionesSegundo.resolve(a, b, c,d, out x1,out x2);
             Assert.AreEqual(double.NaN, x1);
             Assert.AreEqual(double.NaN, x2);
+        }
+        [TestMethod]
+        public void TestMethod7()
+        {
+            int a = 10;
+            int b = 12;
+            int c = 15;
+            int d = 0;
+            double x1, x2;
+            ResolverEcuacionesSegundo.resolve(a, b, c, d, out x1, out x2);
+            Assert.AreEqual(double.NaN, x1);
+            Assert.AreEqual(double.NaN, x2);
+        }
+        [TestMethod]
+        public void TestMethod8()
+        {
+            int a = 10;
+            int b = 12;
+            int c = 15;
+            int d = 15;
+            double x1, x2;
+            ResolverEcuacionesSegundo.resolve(a, b, c, d, out x1, out x2);
+            Assert.AreEqual(0, x1,tol);
+            Assert.AreEqual(-6/(double)5, x2,tol);
+        }
+        [TestMethod]
+        public void TestMethod9()
+        {
+            int a = 1;
+            int b = -2;
+            int c = 1;
+            int d = 0;
+            double x1, x2;
+            ResolverEcuacionesSegundo.resolve(a, b, c, d, out x1, out x2);
+            Assert.AreEqual(1, x1, tol);
+            Assert.AreEqual(1 , x2, tol);
         }
     }
 }
